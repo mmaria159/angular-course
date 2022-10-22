@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   serverElements = [{ type: 'server', name: 'test', content: 'Just a test!' }];
   public myColor = 'red';
 
@@ -23,5 +26,12 @@ export class AppComponent {
       name: bluePrintData.serverName,
       content: bluePrintData.serverContent
     });
+  }
+  onChangeFirst() {
+    this.serverElements[0].name = 'changed'
+  }
+
+  onDestroyFirst() {
+    this.serverElements.splice(0, 1);
   }
 }
